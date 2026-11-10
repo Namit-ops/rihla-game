@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cox6bf53484ix"]
+
+[ext_resource type="PackedScene" uid="uid://drfyablfr6mvk" path="res://Scenes/Duvet/car.tscn" id="1_a202f"]
+[ext_resource type="PackedScene" uid="uid://cbibi87o1x432" path="res://Scenes/camera_manager.tscn" id="2_noarx"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rxa72"]
+
+[node name="Node3D" type="Node3D" unique_id=1537854747]
+
+[node name="Car" parent="." unique_id=681762199 instance=ExtResource("1_a202f")]
+transform = Transform3D(-0.3800111, 0, -0.9249819, 0, 1, 0, 0.9249819, 0, -0.3800111, -1.4606053, 1.1118901, -2.4952264)
+
+[node name="CameraManager" parent="Car" unique_id=2044462958 instance=ExtResource("2_noarx")]
+transform = Transform3D(-0.17127097, 0, -0.9852241, 0, 0.9999999, 0, 0.98522425, 0, -0.17127094, -5.856428, 1.1006551, 0.82693744)
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1545335759]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Node3D" unique_id=1286523452]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CharacterBody3D" unique_id=2073797801]
+
+[node name="Node3D2" type="Node3D" parent="." unique_id=82068418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0683281)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D2" unique_id=1286219903]
+transform = Transform3D(6.5264435, 0, 0, 0, 1, 0, 0, 0, 4.8340707, 0, -0.013, -9)
+mesh = SubResource("PlaneMesh_rxa72")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Node3D2" unique_id=600084161]
+transform = Transform3D(1.18, 0, 0, 0, 2.012, 0, 0, 0, 1.18, 0, 0, 1)
+visible = false
+can_sleep = false
